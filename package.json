@@ -1,23 +1,23 @@
 {
   "name": "@atom/nsfw",
-  "version": "1.0.26",
+  "version": "1.0.28",
   "description": "A simple file watcher for Node",
   "main": "lib/src/index.js",
   "scripts": {
     "compile": "babel --sourceMaps --presets es2015 -d ./lib/spec ./js/spec && babel --sourceMaps --presets es2015 -d ./lib/src ./js/src",
     "eslint": "eslint js/src js/spec",
-    "prepublish": "babel --presets es2015 -d ./lib/src ./js/src",
+    "prepare": "babel --presets es2015 -d ./lib/src ./js/src",
     "debug-test": "npm run eslint && npm run compile && node-debug --debug-brk jasmine-node lib/spec",
     "test": "npm run eslint && npm run compile && jasmine-node lib/spec --verbose"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axosoft/node-simple-file-watcher.git"
+    "url": "https://github.com/builtbygio/nsfw.git"
   },
   "author": "Axosoft, LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/axosoft/node-simple-file-watcher/issues"
+    "url": "https://github.com/builtbygio/nsfw/issues"
   },
   "files": [
     "lib",
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/axosoft/node-simple-file-watcher",
   "dependencies": {
     "fs-extra": "^7.0.0",
-    "nan": "^2.14.0"
+    "nan": "2.28.0"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
@@ -45,5 +45,8 @@
     "file",
     "inotify",
     "fsevents"
-  ]
+  ],
+  "engines": {
+    "chevron": ">=1.0.0"
+  }
 }
