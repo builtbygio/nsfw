@@ -1,10 +1,8 @@
-# @atom/nsfw (Chevron fork)
+# nsfw (Chevron)
 
-Fork of the Atom-era native at `nsfw` version `1.0.28`.
+**Required export:** callable `nsfw(absPath, eventCallback, options)` that
+returns a Promise of `{ start(), stop() }`.
 
-Folded Electron 43 / V8 15 compile fixes that used to live in `script/lib/patch-*.js`:
-
-- `NODE_MODULE` → `NODE_MODULE_CONTEXT_AWARE`
-- V8 15 API removals (`GetIsolate`, `String::Write`, `WriteUtf8` capacity)
-- `nan@2.28.0`
-- oniguruma GCC 14 `gnu89` / spellchecker MSVC wstring bind, where applicable
+`nsfw.actions` must stay `{ CREATED:0, DELETED:1, MODIFIED:2, RENAMED:3 }`
+(`src/path-watcher.js`). Path must be absolute. Default debounce 500ms.
+Native constructor is `NSFW(debounceMS, path, eventCb, errorCb)`.
